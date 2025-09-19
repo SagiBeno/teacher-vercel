@@ -8,7 +8,12 @@ export default class Teachers extends React.Component{
     render() {
         return (
             <div style={{margin: '20px'}}>
-                {JSON.stringify(this.state.teachers)}
+                <ol>
+                    {this.state.teachers.map((teacher, idx) => <li key={idx}>
+                        <b>Name: </b>{teacher.name}; <b>Class: </b>{teacher.hisClass}
+                        {teacher.favorite && <span>; Our favorite teacher!</span>}
+                    </li>)}
+                </ol>
             </div>
         )
     }
